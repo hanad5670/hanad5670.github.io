@@ -1,5 +1,11 @@
+import Navigation from "../components/Navigation";
+
 const Index = () => {
-  return <div className="bg-red-100">Default Entry Page</div>;
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation />
+    </div>
+  );
 };
 
 export default Index;
