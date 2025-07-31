@@ -1,5 +1,8 @@
 name: Deploy Vite App to GitHub Pages
 
+permissions:
+  content: write
+
 on:
   push:
     branches:
