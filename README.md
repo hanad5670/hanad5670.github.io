@@ -1,69 +1,132 @@
-# React + TypeScript + Vite
+# Hanad Hirsi Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built with **React**, **TypeScript**, **Tailwind CSS**, and **Vite**. It highlights my background, skills, projects, and experience, and includes a downloadable resume.
 
-Currently, two official plugins are available:
+📍 **Live Site**: [https://hanad5670.github.io](https://hanad5670.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** with TypeScript
+- **Tailwind CSS** for styling
+- **Vite** for fast development and build
+- **GitHub Pages** for deployment
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
+
+Make sure you have:
+
+- Node.js (v18+ recommended)
+- npm
+
+### Install Dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Start Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Visit [http://localhost:5173](http://localhost:5173) to preview locally. Tailwind styles and React components hot‑reload automatically.
+
+---
+
+## 🧪 Build for Production
+
+```bash
+npm run build
+```
+
+This outputs optimized static files to the `dist/` directory.
+
+---
+
+## 📦 Deploy to GitHub Pages
+
+### Option 1 – Using `gh-pages` Package
+
+Ensure your `package.json` includes:
+
+```json
+"homepage": "https://hanad5670.github.io/<your-repo-name>",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+```
+
+Then run:
+
+```bash
+npm run deploy
+```
+
+This will deploy the contents of `dist/` to the `gh-pages` branch.
+
+### Option 2 – GitHub Actions
+
+Alternatively, create a `.github/workflows/deploy.yml` workflow that:
+
+- Installs dependencies
+- Builds the site
+- Deploys the `dist/` folder using `peaceiris/actions-gh-pages`
+
+---
+
+## 📁 Project Structure
+
+```
+public/
+└── resume.pdf              ← Static resume file
+
+src/
+├── assets/                 ← Images and logos
+├── components/             ← Reusable components (Navbar, Footer, Hero, etc.)
+├── data/                   ← Project and timeline data
+├── lib/                    ← Theme utilities
+├── App.tsx                 ← Main app component
+└── main.tsx                ← App entry point
+
+tailwind.config.ts          ← Tailwind theme customization
+postcss.config.js           ← PostCSS config
+tsconfig.json               ← TypeScript config
+README.md                   ← You're reading it!
+```
+
+---
+
+## ✨ Customization
+
+| Area                  | File(s) to Edit                                  |
+|-----------------------|--------------------------------------------------|
+| Hero Section          | `src/components/Hero.tsx`                        |
+| Project Cards         | `src/data/projects.json`, `ProjectCard.tsx`      |
+| Timeline              | `src/data/roadmap.json`, `Timeline.tsx`          |
+| Resume Download       | `public/resume.pdf` + `ResumeButton.tsx`         |
+| Theme Colors          | `tailwind.config.ts`, `index.css`                |
+| Footer / Contact Info | `Footer.tsx`                                     |
+
+Use Tailwind utilities and CSS variables like `--background`, `--foreground`, etc. for consistent theming.
+
+---
+
+## 🧍 About Me
+
+Hi, I'm **Hanad Hirsi** — a Computer Science graduate passionate about building clean, fast, and accessible web apps. This portfolio reflects my journey, projects, and what I can bring to your team.
+
+📫 Reach out via the contact section on the live site!
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
