@@ -44,8 +44,8 @@ const Projects = () => {
         "Responsive portfolio website with modern design, smooth animations, and contact form integration. Built with performance and SEO optimization in mind.",
       image: portfolioImg,
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://hanad5670.github.io/",
+      githubUrl: "https://github.com/hanad5670/hanad5670.github.io",
       featured: false,
     },
   ];
@@ -97,15 +97,29 @@ const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  disabled={project.liveUrl === ""}
+                <a
+                  href={project.liveUrl !== "" ? project.liveUrl : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={project.title}
+                  aria-disabled={project.liveUrl !== ""}
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Live Demo
-                </Button>
-                <a href={project.githubUrl}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    disabled={project.liveUrl === ""}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </Button>
+                </a>
+
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={project.title}
+                >
                   <Button
                     variant="outline"
                     disabled={project.githubUrl === ""}
@@ -158,24 +172,38 @@ const Projects = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="pt-2 gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled={project.liveUrl === ""}
-                    className="flex-1"
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={project.title}
                   >
-                    <ExternalLink className="mr-1 h-3 w-3" />
-                    Demo
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    disabled={project.githubUrl === ""}
-                    className="flex-1"
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled={project.liveUrl === ""}
+                      className="flex-1"
+                    >
+                      <ExternalLink className="mr-1 h-3 w-3" />
+                      Demo
+                    </Button>
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={project.title}
                   >
-                    <Github className="mr-1 h-3 w-3" />
-                    Code
-                  </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      disabled={project.githubUrl === ""}
+                      className="flex-1"
+                    >
+                      <Github className="mr-1 h-3 w-3" />
+                      Code
+                    </Button>
+                  </a>
                 </CardFooter>
               </Card>
             ))}
