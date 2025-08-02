@@ -66,10 +66,10 @@ const About = () => {
                 development process.
               </p>
               <p>
-                When I'm not coding, you'll find me on the basket-ball court or
+                When I'm not coding, you'll find me on the basketball court or
                 finishing my 20th Elden Ring run. If you're intrested in
                 connecting I'm always available for a chat, you can contact me
-                with an email down below :).
+                with an email down below :)
               </p>
             </div>
 
