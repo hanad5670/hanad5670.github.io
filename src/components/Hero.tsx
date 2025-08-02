@@ -3,6 +3,16 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import professionalPhoto from "@/assets/professional-photo.jpg";
 
 const Hero = () => {
+  const socialLinks = [
+    { icon: Github, href: "https://github.com/hanad5670", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/hanad-hirsi-316a52228/",
+      label: "LinkedIn",
+    },
+    { icon: Mail, href: "mailto:hanad5670@gmail.com", label: "Email" },
+  ];
+
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
@@ -32,7 +42,7 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-              Software Developer
+              Software Developr
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
               Passionate about creating elegant solutions to complex problems. I
@@ -45,22 +55,29 @@ const Hero = () => {
                 View My Work
                 <ArrowDown className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg">
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </Button>
+              <a href="/resume.pdf" download="Resume.pdf">
+                <Button variant="outline" size="lg">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </Button>
+              </a>
             </div>
 
             <div className="flex justify-center lg:justify-start gap-4">
-              <Button variant="outline" size="icon">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Mail className="h-4 w-4" />
-              </Button>
+              {socialLinks.map((social, index) => {
+                return (
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                  >
+                    <Button variant="outline" key={index} size="icon">
+                      <social.icon className="h-4 w-4" />
+                    </Button>
+                  </a>
+                );
+              })}
             </div>
           </div>
 

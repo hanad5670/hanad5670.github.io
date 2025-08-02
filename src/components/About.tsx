@@ -72,11 +72,12 @@ const About = () => {
                 with an email down below :)
               </p>
             </div>
-
-            <Button className="mt-6">
-              <Download className="mr-2 h-4 w-4" />
-              Download Full Resume
-            </Button>
+            <a href="/resume.pdf" download="Resume.pdf">
+              <Button className="mt-6">
+                <Download className="mr-2 h-4 w-4" />
+                Download Full Resume
+              </Button>
+            </a>
           </div>
 
           <div>

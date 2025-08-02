@@ -7,6 +7,9 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { ExternalLink, Github } from "lucide-react";
+import omniwatchImg from "@/assets/omniwatch.png";
+import pikachuImg from "@/assets/pikachu.png";
+import portfolioImg from "@/assets/portfolio.png";
 
 const Projects = () => {
   const projects = [
@@ -14,7 +17,7 @@ const Projects = () => {
       title: "OmniWatch",
       description:
         "Python CLI-based application that simulatest navigation through a building layout, incoroprating role-based access control for different users while displaying building movement updates through React frontend",
-      image: "/api/placeholder/400/250",
+      image: omniwatchImg,
       technologies: [
         "Python",
         "React",
@@ -29,7 +32,7 @@ const Projects = () => {
       title: "PokeGuessr",
       description:
         "A wordle-like game in which a user has 8 guesses to figure out which of the 1000+ pokemon is today's answer, also allows for playing games from previous days",
-      image: "/api/placeholder/400/250",
+      image: pikachuImg,
       technologies: ["Node.js", "React", "SQL", "Python"],
       liveUrl: "",
       githubUrl: "https://github.com/hanad5670/Poke_Guessr",
@@ -39,7 +42,7 @@ const Projects = () => {
       title: "Portfolio Website",
       description:
         "Responsive portfolio website with modern design, smooth animations, and contact form integration. Built with performance and SEO optimization in mind.",
-      image: "/api/placeholder/400/250",
+      image: portfolioImg,
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
       liveUrl: "#",
       githubUrl: "#",
