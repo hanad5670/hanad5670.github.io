@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Shrink } from "lucide-react";
 import omniwatchImg from "@/assets/omniwatch.png";
 import pikachuImg from "@/assets/pikachu.png";
 import portfolioImg from "@/assets/portfolio.png";
@@ -26,7 +26,8 @@ const Projects = () => {
       ],
       liveUrl: "",
       githubUrl: "https://github.com/hanad5670/OmniWatch-Building-CLI",
-      featured: true,
+      featured: false,
+      shrinkToFit: false,
     },
     {
       title: "PokeGuessr",
@@ -34,9 +35,10 @@ const Projects = () => {
         "A wordle-like game in which a user has 8 guesses to figure out which of the 1000+ pokemon is today's answer, also allows for playing games from previous days",
       image: pikachuImg,
       technologies: ["Node.js", "React", "SQL", "Python"],
-      liveUrl: "",
+      liveUrl: "https://pokeguessr-1t6a.onrender.com/",
       githubUrl: "https://github.com/hanad5670/Poke_Guessr",
       featured: true,
+      shrinkToFit: true,
     },
     {
       title: "Portfolio Website",
@@ -47,6 +49,7 @@ const Projects = () => {
       liveUrl: "https://hanad5670.github.io/",
       githubUrl: "https://github.com/hanad5670/hanad5670.github.io",
       featured: false,
+      shrinkToFit: false,
     },
   ];
 
@@ -67,7 +70,7 @@ const Projects = () => {
         </div>
 
         {/* Featured Projects */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 justify-center gap-8 mb-16">
           {featuredProjects.map((project, index) => (
             <Card
               key={index}
@@ -77,7 +80,9 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className={`w-full h-48 ${
+                    project.shrinkToFit ? "object-contain" : "object-cover"
+                  } group-hover:scale-105 transition-transform duration-300`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
@@ -139,7 +144,7 @@ const Projects = () => {
           <h3 className="text-2xl font-semibold text-center mb-8">
             Other Projects
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {otherProjects.map((project, index) => (
               <Card
                 key={index}
