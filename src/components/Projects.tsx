@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { ExternalLink, Github, Shrink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import omniwatchImg from "@/assets/omniwatch.png";
 import pikachuImg from "@/assets/pikachu.png";
 import portfolioImg from "@/assets/portfolio.png";
